@@ -1,0 +1,42 @@
+header {
+  height: 6rem;
+  width: 100%;
+  display: block;
+  background-color: black;
+
+  .title{
+    img{
+      height: 3rem;
+    }
+  }
+
+  nav {
+    background-color: $color01;
+
+    ul {
+      width: 100%;
+      height: 3rem;
+      list-style: none;
+
+      display: flex;
+      align-items: center;
+
+      li {
+        font-family: 'Rubik', Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        margin: 0.5rem 1rem;
+
+      }
+    }
+  }
+}
+
+footer {
+  background-color: black;
+  color: $color01;
+
+  #copyright {
+    text-align: center;
+    margin: 0 0 5px 0;
+  }
+}

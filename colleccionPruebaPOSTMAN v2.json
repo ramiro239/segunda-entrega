@@ -1,0 +1,372 @@
+{
+	"info": {
+		"_postman_id": "312200cf-2a54-4168-8dd0-5f948c6873ab",
+		"name": "2da Entrega",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31217540"
+	},
+	"item": [
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "get Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/products"
+					},
+					"response": []
+				},
+				{
+					"name": "get Products Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/products/group/categorys"
+					},
+					"response": []
+				},
+				{
+					"name": "get Products Limit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products?limit=2&sort=aaa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2",
+									"description": "limite de productos a enviar"
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"description": "pagina de la paginacion",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "aaa",
+									"description": "ordenamiento"
+								},
+								{
+									"key": "campo1",
+									"value": "_id",
+									"description": "nombre de la columna a filtrar",
+									"disabled": true
+								},
+								{
+									"key": "filtro1",
+									"value": "657f74321a08d129f8cb9caf",
+									"description": "filtro",
+									"disabled": true
+								},
+								{
+									"key": "campo2",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "filtro2",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "campo3",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "filtro3",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Products ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/products/657f74321a08d129f8cb9cb5"
+					},
+					"response": []
+				},
+				{
+					"name": "delete Product by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/products/658b7b79bcd7b394c3d8000b"
+					},
+					"response": []
+				},
+				{
+					"name": "delete Product by Code",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products?code=PRUEBA05",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "PRUEBA05"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post Product bad",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Bicicleta Volta Ruta Brest Horq. Carbono Sora 18v 700c\",\r\n    \"description\": \"Cuadro aluminio ruta volta brest azul horquilla carbono r700 volta\",\r\n    \"code\": \"1007704\",\r\n    \"price\": 1198299,\r\n    \"stock\": 15,\r\n    \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/products"
+					},
+					"response": []
+				},
+				{
+					"name": "post Product bad Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Bicicleta Volta Ruta Brest Horq. Carbono Sora 18v 700c\",\r\n  \"description\": \"Cuadro aluminio ruta volta brest azul horquilla carbono r700 volta\",\r\n  \"code\": \"1006836\",\r\n  \"price\": 1198299,\r\n  \"stock\": 15,\r\n  \"status\": true,\r\n  \"category\": \"Ruta\",\r\n  \"thumbnail\": \"https://newsport.vtexassets.com/arquivos/ids/17565001-800-auto?v=638357578934970000&width=800&height=auto&aspect=true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/products"
+					},
+					"response": []
+				},
+				{
+					"name": "post Product sin Imag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Bicicleta Volta Ruta Brest Horq. Carbono Sora 18v 700c\",\r\n    \"description\": \"Cuadro aluminio ruta volta brest azul horquilla carbono r700 volta\",\r\n    \"code\": \"1006836\",\r\n    \"price\": 1198299,\r\n    \"stock\": 15,\r\n    \"status\": true,\r\n    \"category\": \"Ruta\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/products"
+					},
+					"response": []
+				},
+				{
+					"name": "post Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"EJEMPLO BICICLETA2\",\r\n    \"description\": \"...\",\r\n    \"code\": \"PRUEBA05\",\r\n    \"price\": 1198299,\r\n    \"stock\": 15,\r\n    \"status\": true,\r\n    \"category\": \"Ruta\",\r\n    \"thumbnail\": \"https://newsport.vtexassets.com/arquivos/ids/17567638-800-auto?v=63835\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/products"
+					},
+					"response": []
+				},
+				{
+					"name": "post Product bad Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Bicicleta Volta Ruta Brest Horq. Carbono Sora 18v 700c\",\r\n    \"description\": \"Cuadro aluminio ruta volta brest azul horquilla carbono r700 volta\",\r\n    \"code\": \"1006836\",\r\n    \"price\": 1198299,\r\n    \"stock\": 15,\r\n    \"status\": false,\r\n    \"category\": \"Ruta\",\r\n    \"thumbnail\": \"https://newsport.vtexassets.com/arquivos/ids/17565001-800-auto?v=638357578934970000&width=800&height=auto&aspect=true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/products/658b7df7a8cbbaccb315ec16"
+					},
+					"response": []
+				},
+				{
+					"name": "Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"EJEMPLO BICICLETA2\",\r\n    \"description\": \"...\",\r\n    \"code\": \"PRUEBA01\",\r\n    \"price\": 1198299,\r\n    \"stock\": 15,\r\n    \"status\": true,\r\n    \"category\": \"Ruta\",\r\n    \"thumbnail\": \"https://newsport.vtexassets.com/arquivos/ids/17567638-800-auto?v=63835\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/products/658b7df7a8cbbaccb315ec16"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carrito",
+			"item": [
+				{
+					"name": "Carts id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/carts/6591b1a1419b33fbcb57e2b1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts",
+								"6591b1a1419b33fbcb57e2b1"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "false",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Carts - crear carrito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:8080/api/carts/"
+					},
+					"response": []
+				},
+				{
+					"name": "Carts - actualizar array de productos",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"product\": \"657f74321a08d129f8cb9cb2\",\r\n        \"quantity\": 1\r\n    },\r\n        {\r\n        \"product\": \"657f74321a08d129f8cb9caf\",\r\n        \"quantity\": 2\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/carts/6591b1a1419b33fbcb57e2b1"
+					},
+					"response": []
+				},
+				{
+					"name": "Carts - actualizar array de productos Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"quantity\": 3 }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/carts/6591b1a1419b33fbcb57e2b1/product/657f74321a08d129f8cb9cb2"
+					},
+					"response": []
+				},
+				{
+					"name": "Carts agregar producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:8080/api/carts/6591b26b44c155e2e3d6f47a/product/657f74321a08d129f8cb9caf"
+					},
+					"response": []
+				},
+				{
+					"name": "Carts sacar producto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/carts/658e2082ba56b7a6e2467368/product/657f74321a08d129f8cb9caf"
+					},
+					"response": []
+				},
+				{
+					"name": "Cart sacar todos los productos",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/carts/6591b26b44c155e2e3d6f47a"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
